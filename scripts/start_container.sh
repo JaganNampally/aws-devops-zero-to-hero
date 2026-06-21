@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
- 
+  
 # Pull the Docker image from Docker Hub
 docker pull jagandock/simple-python-app
 
