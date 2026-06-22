@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-IMAGE_TAG=$(cat image_tag.txt)
+IMAGE_TAG=$(cat ../image_tag.txt)
 # Pull the Docker  image from Docker Hub
 docker pull jagandock/simple-python-app:$IMAGE_TAG
    
