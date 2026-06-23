@@ -1,16 +1,10 @@
 #!/bin/bash
 set -e
 
-echo "Current directory:"
-pwd
+DEPLOY_DIR=$(dirname "$(readlink -f "$0")")/..
 
-echo "Files in current directory:"
-ls -la
+IMAGE_TAG=$(cat "$DEPLOY_DIR/image_tag.txt")
 
-echo "Searching for image_tag.txt:"
-find /opt/codedeploy-agent -name image_tag.txt 2>/dev/null
-
-IMAGE_TAG=$(cat image_tag.txt)
 # Pull the Docker  image from Docker Hub
 docker pull jagandock/simple-python-app:$IMAGE_TAG
    
